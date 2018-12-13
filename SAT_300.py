@@ -1,3 +1,29 @@
+# Following code contains three fucntions with following three different heuristics to find possibly optimal truth assignments 
+# for variables in Boolean formulas (total 300 formulas in dimacs format) and also compares performances of these heuristics.
+
+# 1)	Hill Climbing Algorithm:
+# Implemented hill climbing algorithm such that it randomly selects a new variable every time and assigns that variable a value
+# (True or False) and calculate the number of clauses with truth assignment we get for both values i.e. True and False .
+# Finally it selects the value to be assigned to that variable based on which gives higher number of true clauses.
+# In this way it selects value for each variable in the formula.
+
+# 2)	WalkSAT algorithm:
+# Implemented walkSAT algorithm as it is given in the reference book of the class. 
+# Used maximum flips as 100 as the formulas have 100 variables at most and p=0.5 as suggested in the reference book.
+# Implemented algorithm first assigns random values to all the variables and loops for max flips. 
+# In each loop, it chooses clause with truth value false and pick any variable from that clause and flips the value of that variable in the model with probability 0.5.
+
+# 3)	DPLL algorithm:
+# DPLL algorithm uses pure variable rule as well as unit propagation rule to resolve the formula in quick manner and 
+# also a random variable is assigned a truth value and it checks if the formula is satisfiable. 
+# When it assigns value to the variable, all the clauses with that variable are deleted from formula and 
+# the clauses which has negation of that variable, simply that variable is deleted from the clause. 
+# DPLL algorithm uses backtracking to assign truth values to variables and check if formula is satisfied. 
+# It terminates when it founds formula empty i.e. the formula is satisfiable or one of the clauses empty 
+# i.e. the formula is unsatisfiable.
+
+
+
 
 # coding: utf-8
 
